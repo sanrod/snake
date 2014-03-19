@@ -5,7 +5,9 @@
 #include <stdlib.h>
 #include<time.h>
 /*
-  функция -случайое поя
+
+-случайое появление еды на поле
+-
   */
 char FoodRand(int Snake[][2],char Field[][HEIGTH], int Snakesize)
 {
@@ -16,7 +18,7 @@ char FoodRand(int Snake[][2],char Field[][HEIGTH], int Snakesize)
     int x=rand()%WIDTH-1;
     int y=rand()%HEIGTH-1;
     }
-    while(x==0||y==0||);
+    while(x==0||y==0);
 
 
 
