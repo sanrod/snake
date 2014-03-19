@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include<time.h>
 /*
-  функция -случайое
+  функция -случайое поя
   */
 char FoodRand(int Snake[][2],char Field[][HEIGTH], int Snakesize)
 {
