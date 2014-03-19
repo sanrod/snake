@@ -24,6 +24,7 @@
 #include "copySnake.h"
 #include "DriveEngenie.h"
 #include "getSnake.h"
+#include"FoodRand.h"
 int x_eda,y_eda;
 int main()
 {
@@ -75,13 +76,13 @@ int main()
     coutput(Field);
     for(;;)
     {
-		printf("%d",foodRand());
+	//	printf("%d",FoodRand());
         deleteSnake(SnakeMas,Field,3);
-		makeAStep (SnakeMas,3,scanMove());
+		makeAStep (SnakeMas,3,3); /*scanMove()*/
 		if((x_eda==SnakeMas[0][0]) && (y_eda==SnakeMas[0][1]))
 		{
-			DeleteFood(x_eda,y_eda);
-			SnakeRise(SnakeMas);
+	//		DeleteFood(x_eda,y_eda);
+	//		SnakeRise(SnakeMas);
 		}
         copySnake (SnakeMas,Field,3);
         coutput (Field);
