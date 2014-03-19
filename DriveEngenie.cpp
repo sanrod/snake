@@ -16,5 +16,8 @@ void makeAStep(int Snake[][2],int SnakeSize,int direction)
 
     Snake[0][0]+=1;
     if(Snake[0][0]>WIDTH-2) Snake[0][0]=1;
-
 }
+/*
+
+  ngkjdngrbkjsdnbjkgsdnkjbdnkbn
+ */
