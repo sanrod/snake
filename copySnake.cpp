@@ -7,6 +7,6 @@ void copySnake(int Snake[][2],char Field[][HEIGTH], int Snakesize)
     {
         if(i==0) Field[Snake[i][0]][Snake[i][1]]=getSnakeHead();
            else  Field[Snake[i][0]][Snake[i][1]]=getSnakeBody();
-
+//вывод змейки
     }
 }
