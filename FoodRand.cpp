@@ -1,12 +1,16 @@
 
 #include"FoodRand.h"
 #include"Global.h"
-#include<random>
+//#include<random>
+#include <stdlib.h>
 #include<time.h>
-char food(int Snake[][2],char Field[][HEIGTH], int Snakesize)
+/*
+  функция -случайое
+  */
+char FoodRand(int Snake[][2],char Field[][HEIGTH], int Snakesize)
 {
     srand(time(NULL));
-
+    int x,y;
     do
     {
     int x=rand()%WIDTH-1;

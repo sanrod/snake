@@ -13,7 +13,7 @@
  - функция копирования змейки на поле copySnake
  - функция стирания змейки с поля.  deleteSnake
  */
-
+#include"FoodRand.h"
 #include "coutput.h"
 #include "Global.h"
 #include <time.h> //Sleep(ms)
@@ -75,14 +75,14 @@ int main()
     coutput(Field);
     for(;;)
     {
-		printf("%d",foodRand());
+/*                printf("%d",FoodRand());
         deleteSnake(SnakeMas,Field,3);
-		makeAStep (SnakeMas,3,scanMove());
-		if((x_eda==SnakeMas[0][0]) && (y_eda==SnakeMas[0][1]))
+                makeAStep (SnakeMas,3,scanMove());
+                if((x_eda==SnakeMas[0][0]) && (y_eda==SnakeMas[0][1]))
 		{
 			DeleteFood(x_eda,y_eda);
 			SnakeRise(SnakeMas);
-		}
+                }*/
         copySnake (SnakeMas,Field,3);
         coutput (Field);
         Sleep(50);
