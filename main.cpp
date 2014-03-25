@@ -16,7 +16,6 @@
 
 #include "coutput.h"
 #include "Global.h"
-#include <iostream>
 #include <time.h> //Sleep(ms)
 #include <conio.h> // hitkey() getch()
 #include <windows.h> // system(cls)

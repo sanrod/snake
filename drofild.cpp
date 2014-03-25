@@ -2,7 +2,7 @@
 
 void drofild(char Field[][HEIGTH])
 {
-	FILE *FileWithField = fopen("D:\drofild.txt", "r");
+	FILE *FileWithField = fopen("drofild.txt", "r");
 	if (FileWithField)
 	{
 		feof(FileWithField);// true - нельзя читать, false можно
