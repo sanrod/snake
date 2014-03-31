@@ -13,7 +13,7 @@
  - функция копирования змейки на поле copySnake
  - функция стирания змейки с поля.  deleteSnake
  */
-#include"FoodRand.h"
+
 #include "coutput.h"
 #include "Global.h"
 #include <time.h> //Sleep(ms)
@@ -24,49 +24,17 @@
 #include "copySnake.h"
 #include "DriveEngenie.h"
 #include "getSnake.h"
-#include"FoodRand.h"
-int x_eda,y_eda;
+#include "scanMove.h"
+#include "droFild.h"
+
+using namespace std;
+
 int main()
 {
     int SnakeMas[100][2];
     char Field[WIDTH][HEIGTH]; // pole
-    for(int i=0;i<WIDTH;i++)
-    {
-        for(int j=0;j<HEIGTH;j++)
-        {
-            if ((i==0) && (j==0))
-            {
-                Field[i][j]=getLeftTopCorner();
-                continue;
-            }
-            if ((i==0) && (j==HEIGTH-1))
-            {
-                Field[i][j]=getLeftBottomCorner();
-                continue;
-            }
-            if ((i==WIDTH-1) && (j==0))
-            {
-                Field[i][j]=getRightTopCorner();
-                continue;
-            }
-            if ((i==WIDTH-1) && (j==HEIGTH-1))
-            {
-                Field[i][j]=getRightBottomCorner();
-                continue;
-            }
-            if ((i==0) || (i==WIDTH-1))
-            {
-                Field[i][j]=getVerticalBorder();
-                continue;
-            }
-            if ((j==0) || (j==HEIGTH-1))
-            {
-                Field[i][j]=getHorizontalBorder();
-                continue;
-            }
-            Field[i][j]=' ';
-        }
-    }
+	drofild(Field);
+
     SnakeMas[2][0]=1; SnakeMas[2][1]=1;
     SnakeMas[1][0]=2; SnakeMas[1][1]=1;
     SnakeMas[0][0]=3; SnakeMas[0][1]=1;
@@ -74,19 +42,16 @@ int main()
 
     copySnake(SnakeMas,Field,3);
     coutput(Field);
-    for(;;)
+	int Number_direction = 0;
+    for(int i=0;i<100000;i++)
     {
-	//	printf("%d",FoodRand());
         deleteSnake(SnakeMas,Field,3);
-		makeAStep (SnakeMas,3,3); /*scanMove()*/
-		if((x_eda==SnakeMas[0][0]) && (y_eda==SnakeMas[0][1]))
-		{
-	//		DeleteFood(x_eda,y_eda);
-	//		SnakeRise(SnakeMas);
-		}
+        makeAStep (SnakeMas,3,0);
         copySnake (SnakeMas,Field,3);
         coutput (Field);
-        Sleep(50);
+		Number_direction=scanmove();
+        Sleep(500);
+
     }
     return 0;
 }
